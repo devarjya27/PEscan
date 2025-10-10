@@ -1,2 +1,2 @@
 # PEscan
-volatility 3 plugin that sifts through memory dump for suspicious PEs
+a WIP vol3 plugin that looks for suspicious PEs
