@@ -18,9 +18,9 @@ vol3 -f mem.dump windows.pescan
 * Analyzes import and export tables.
 * Calculates entropy levels to detect packed, encrypted, or obfuscated PE sections.
 * Recognizes compiler metadata and packer signatures.
-* Extracts and scans strings for C2 indicators, PowerShell/WMI scripting traces, and related artifacts.
+* Extracts and scans strings for C2 indicators, PowerShell scripting traces, and related artifacts.
 * Correlates threads to determine execution originating from suspicious PE regions.
-* Outputs structured findings in JSON format for automation, analysis, and integration.
+* Outputs structured findings in JSON format.
   
 ## References
 - [Investigating Memory Forensics](https://alpbatursahin.medium.com/investigating-memory-forensic-processes-dlls-consoles-process-memory-and-networking-7277689a09b7)
