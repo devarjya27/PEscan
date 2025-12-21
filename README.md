@@ -31,6 +31,8 @@ python3 vol.py -f Damian.mem windows.pescan.PEscan --json-output
   Anomalies     0       0x0     0x0     Packer detected: UPX    0.0
 --------------------    0       0x0     0x0     --------------------    0.0
 ```
+
+Json output:
 ```json
 --snip--
 
