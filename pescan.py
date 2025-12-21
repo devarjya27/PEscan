@@ -27,18 +27,19 @@ class PEscan(interfaces.plugins.PluginInterface):
 
     @classmethod
     def get_requirements(cls) -> List[interfaces.configuration.RequirementInterface]:
-        """Define plugin requirements and configuration options"""
         return [
             requirements.ModuleRequirement(
                 name="kernel",
                 description="Windows kernel",
                 architectures=["Intel32", "Intel64"]
             ),
-            requirements.VersionRequirement(
-                name="pslist", component=pslist.PsList, version=(2, 0, 0)
+            requirements.PluginRequirement(
+                name="pslist",
+                plugin=pslist.PsList
             ),
-            requirements.VersionRequirement(
-                name="poolscanner", component=poolscanner.PoolScanner, version=(1, 0, 0)
+            requirements.PluginRequirement(
+                name="poolscanner",
+                plugin=poolscanner.PoolScanner
             ),
             requirements.BooleanRequirement(
                 name="json-output",
@@ -53,6 +54,7 @@ class PEscan(interfaces.plugins.PluginInterface):
                 default=False
             ),
         ]
+
 
     def __init__(self, *args, **kwargs):
         """Initialize plugin with statistics tracking"""
