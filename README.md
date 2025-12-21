@@ -15,7 +15,8 @@ Plugin Arguments:
 Output detailed analysis results in JSON format instead of table format. JSON includes complete PE structure analysis, all extracted strings, thread information, and full anomaly details.
 
 **Example:**
-```
+
+```bash
 python3 vol.py -f Damian.mem windows.pescan.PEscan --json-output
 
 --snip--
@@ -29,7 +30,8 @@ python3 vol.py -f Damian.mem windows.pescan.PEscan --json-output
     Section:.rsrc       0       0x0     0x0     R:1W:1X:0       5.97    VSize:4096      RSize:2048
   Anomalies     0       0x0     0x0     Packer detected: UPX    0.0
 --------------------    0       0x0     0x0     --------------------    0.0
-
+```
+```json
 --snip--
 
   "high_threat_details": [
