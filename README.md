@@ -8,10 +8,15 @@ Then run:
 ```
 vol3 -f mem.dump windows.pescan.PEscan
 ```
+Plugin Arguments:
+```
+--json-output
+```
+Output detailed analysis results in JSON format instead of table format. JSON includes complete PE structure analysis, all extracted strings, thread information, and full anomaly details.
 
 **Example:**
 ```
-python3 vol.py -f Damian.mem windows.pescan.PEscan
+python3 vol.py -f Damian.mem windows.pescan.PEscan --json-output
 
 --snip--
 
@@ -24,6 +29,92 @@ python3 vol.py -f Damian.mem windows.pescan.PEscan
     Section:.rsrc       0       0x0     0x0     R:1W:1X:0       5.97    VSize:4096      RSize:2048
   Anomalies     0       0x0     0x0     Packer detected: UPX    0.0
 --------------------    0       0x0     0x0     --------------------    0.0
+
+--snip--
+
+  "high_threat_details": [
+    {
+      "process": "scvhost.exe",
+      "pid": 1924,
+      "ppid": 1532,
+      "virtual_address": "0x13f130000",
+      "size": "0xfafff",
+      "protection": "Unknown",
+      "filename": "\\Users\\EdwardNygma7\\Downloads\\windows-patch-update\\scvhost.exe",
+      "threat_level": "HIGH",
+      "threat_score": 10,
+      "indicators": [
+        "PACKED:UPX",
+        "HIGH_ENT:6.2",
+        "Packer_detected:_UPX"
+      ],
+      "entropy": 6.17,
+      "pe_analysis": {
+        "valid": true,
+        "dos_header": {
+          "e_lfanew": 128
+        },
+        "pe_header": {
+          "machine": "0x8664",
+          "sections": 3,
+          "timestamp": 1683391173,
+          "characteristics": "0x22e",
+          "is_64bit": true,
+          "entry_point": "0xf91c0",
+          "image_base": "0x13f130000"
+        },
+        "sections": [
+          {
+            "name": "UPX0",
+            "virtual_size": 733184,
+            "virtual_addr": "0x1000",
+            "raw_size": 0,
+            "characteristics": "0x60000080",
+            "entropy": 0.0,
+            "is_executable": true,
+            "is_writable": false,
+            "is_readable": true
+          },
+          {
+            "name": "UPX1",
+            "virtual_size": 286720,
+            "virtual_addr": "0xb4000",
+            "raw_size": 284160,
+            "characteristics": "0x60000040",
+            "entropy": 6.18,
+            "is_executable": true,
+            "is_writable": false,
+            "is_readable": true
+          },
+          {
+            "name": ".rsrc",
+            "virtual_size": 4096,
+            "virtual_addr": "0xfa000",
+            "raw_size": 2048,
+            "characteristics": "0xc0000040",
+            "entropy": 5.97,
+            "is_executable": false,
+            "is_writable": true,
+            "is_readable": true
+          }
+        ],
+        "anomalies": [
+          "Packer detected: UPX"
+        ],
+        "packer": "UPX"
+      },
+      "strings": {
+        "urls": [],
+        "ips": [],
+        "commands": [],
+        "powershell": [],
+        "registry": [],
+        "suspicious": []
+      },
+      "threads": []
+    }
+  ]
+
 ```
 
 ## Features (tentative)
