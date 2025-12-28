@@ -133,9 +133,3 @@ Json output:
 * Extracts and scans strings for C2 indicators, PowerShell scripting traces, and related artifacts.
 * Correlates threads to determine execution originating from suspicious PE regions.
 * Outputs structured findings in JSON format.
-
-
-## References
-- [Investigating Memory Forensics](https://alpbatursahin.medium.com/investigating-memory-forensic-processes-dlls-consoles-process-memory-and-networking-7277689a09b7)
-- [Key Windows Kernel Data Structures](https://codemachine.com/articles/kernel_structures.html)
-- [Windows Process Internals](https://imphash.medium.com/windows-process-internals-a-few-concepts-to-know-before-jumping-on-memory-forensics-823d72d4d7b8)
